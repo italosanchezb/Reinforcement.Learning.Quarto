@@ -3,12 +3,12 @@ project:
 
 book:
   title: "Reinforcement Learning Quarto"
-  author: "Norah Jones"
+  author: "Ítalo Sánchez Bermúdez"
   date: "19/9/2024"
   chapters:
     - index.qmd
     - intro.qmd
-    - Tarea 1.qmd
+    - Tarea 2.qmd
     - summary.qmd
     - references.qmd
 

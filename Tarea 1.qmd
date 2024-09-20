@@ -1,3 +1,5 @@
+# Tarea 1
+
 ```{r}
 library(bibtex)
 ## Activate the Core Packages
@@ -32,6 +34,7 @@ gt(data) |>
 ## Adjust some defaults
 column$color <- "orange"
 column$size  <- 15
+column$text_size <- 2
 column$source_info <- "Source: Sutton and Barto (2018)"
 
 ## Milestones timeline
@@ -62,16 +65,5 @@ encontrar  estructuras  ocultas  en  conjuntos  de  datos  no  etiquetados y Aun
 
 
 
-del algoritmo de la programación dinámica se sigue que para este caso particular
-$J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}$
-
-luego, para $k= N-1$
-$$J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\}$$
-derivando con respecto a $a$ obtenemos 
-$$(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}$$}
-depués igualando a cero 
-$$(1-\gamma)\beta^{N-1}\[a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}\]=0$$
-entonces 
-$$(\cfrac{x-a}{a})^\gamma=\beta(1+r)^{1-\gamma}$$
-$$\cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}$$
+    
 

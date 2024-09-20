@@ -1,26 +1,36 @@
 date,event,reference
-1959,"Comienza a utilizarse el ""optimal control"" (OC)",paso
-1957,"Aparece ""Dynamic Programming"" (DP)",mundo
-1957,Introducen los Markov Decision Processes (MDP),
-1960,Aparece el metodo de iteracion de politicas,
+1959,"Comienza a utilizarse el ""optimal control"" (OC)",""
+
+1957,"Aparece ""Dynamic Programming"" (DP)","Bellman, R. E. (1957a). Dynamic Programming. Princeton University Press,Princeton."
+
+1957,Introducen los Markov Decision Processes (MDP),"Bellman, R. E. (1957b). A Markov decision process. Journal of Mathematical Mechanics, 6:679–684"
+
+1960,Aparece el metodo de iteracion de politicas,"Howard, R. (1960). Dynamic Programming and Markov Processes. MIT Press, Cambridge, MA."
+
 1959,Se desarrolla extensamente la DP,
-1977,Werbos conecta el OC y PD ,
-1989,Watkins integra los metodos de aprendizaje (MA),
-1996,"Aparece el termino ""Neurodynamic Programming""",
-1911,"Primer idea del ""trial-and-error learning"" (TaEL)",
-1927,"Aparece el termino ""Reinforcement"" en el contexto del aprendizaje animal",
-1948," Turing describe un diseno para un sistema ""pleasure-pain system""",
-1954,Minsky Farley y Clark publican sus investigaciones sobre TaEL.,
-1960,"Se utilizan por primera vez en ingeniería""Reinforcement"" y ""Reinforcement Learning""",
-1961,"Se publica ""Steps Toward Artificial Intelligence""",
-1963,Se desarrolla STeLLA,
-1961,"Se describe un sistema ""TaEL"" para el tic-tac-toe",
-1973,"Widrow, Gupta y Maitra modifican el LMS.",
-1960,"Se originan los ""Learning Automata""",
-1973,Teoría del aprendizaje de Bush y Mostelle,
-2003,"""Reinforcement Learning"" en economí",
-2012,Vision general del Reinforcement Learning y Juegos,
-1986,Introducen los clasificadores,
-1972,Trabajo de Klopf,
-1978,Sutton desarrolla las ideas de Klopf,
+
+1977,Werbos conecta el OC y PD ,"Werbos, P. J. (1977). Advanced forecasting methods for global crisis warning
+and models of intelligence. General Systems Yearbook, 22:25–38."
+
+1989,Watkins integra los metodos de aprendizaje (MA),"Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. Ph.D. thesis, Cambridge University."
+
+1996,"Aparece el termino ""Neurodynamic Programming""", "Bertsekas, D. P., Tsitsiklis, J. N. (1989). Parallel and Distributed Computation: Numerical Methods. Prentice-Hall, Englewood Cliffs, NJ"
+
+1911,"Primer idea del ""trial-and-error learning"" (TaEL)","Thorndike, E. L. (1911). Animal Intelligence. Hafner, Darien, CT."
+1927,"Aparece el termino ""Reinforcement"" en el contexto del aprendizaje animal","Pavlov, P. I. (1927). Conditioned Reflexes. Oxford University Press, London."
+1948," Turing describe un diseno para un sistema ""pleasure-pain system""","Turing, A. M. (1948). Intelligent Machinery, A Heretical Theory. The Turing Test: Verbal Behavior as the Hallmark of Intelligence, 105."
+1954,Minsky Farley y Clark publican sus investigaciones sobre TaEL.,"Farley, B. G., Clark, W. A. (1954). Simulation of self-organizing systems by digital computer. IRE Transactions on Information Theory, 4:76–84."
+1960,"Se utilizan por primera vez en ingeniería""Reinforcement"" y ""Reinforcement Learning""","Mendel, J. M. (1966). A survey of learning control systems. ISA Transactions,5:297–303"
+1961,"Se publica ""Steps Toward Artificial Intelligence""","Minsky, M. L. (1961). Steps toward artificial intelligence. Proceedings of the Institute of Radio Engineers, 49:8–30. Reprinted in E. A. Feigenbaum and J. Feldman (eds.), Computers and Thought, pp. 406–450. McGraw-Hill, New York, 1963."
+1963,Se desarrolla STeLLA, "Andreae, J. H. (1963). STELLA: A scheme for a learning machine. In Proceedings of the 2nd IFAC Congress, Basle, pp. 497–502. Butterworths, London."
+1961,"Se describe un sistema ""TaEL"" para el tic-tac-toe", "Michie, D. (1963). Experiments on the mechanisation of game learning. 1. characterization of the model and its parameters. Computer Journal,1:232–263."
+1973,"Widrow, Gupta y Maitra modifican el LMS.","Widrow, B., Gupta, N. K., Maitra, S. (1973). Punish/reward: Learning with a critic in adaptive threshold systems. IEEE Transactions on Systems,Man, and Cybernetics, 3:455–465."
+1960,"Se originan los ""Learning Automata""","Tsetlin, M. L. (1973). Automaton Theory and Modeling of Biological Systems. Academic Press, New York."
+1973,Teoría del aprendizaje de Bush y Mostelle, "Bush, R. R., Mosteller, F. (1955). Stochastic Models for Learning. Wiley, New York."
+2003,"""Reinforcement Learning"" en economia","Camerer, C. (2003). Behavioral game theory: Experiments in strategic interaction. Princeton University Press."
+2012,Vision general del Reinforcement Learning y Juegos,"Now´e, A., Vrancx, P., De Hauwere, Y. M. (2012). Game theory and multiagent reinforcement learning. In Reinforcement Learning (pp. 441-470).Springer Berlin Heidelberg."
+1986,Introducen los clasificadores, "Holland, J. H. (1986). Escaping brittleness: The possibility of general-purpose learning algorithms applied to rule-based systems. In R. S. Michalski, J. G. Carbonell, and T. M. Mitchell (eds.), Machine Learning: An Artificial Intelligence Approach, vol. 2, pp. 593–623. Morgan Kaufmann, San Mateo, CA."
+1972,Trabajo de Klopf, "Klopf, A. H. (1972). Brain function and adaptive systems—A heterostatic theory. Technical Report AFCRL-72-0164, Air Force Cambridge Research Laboratories, Bedford, MA. A summary appears in Proceedings of the International Conference on Systems, Man, and Cybernetics. IEEE Systems, Man, and Cybernetics Society, Dallas, TX, 1974."
+1978,Sutton desarrolla las ideas de Klopf,"Sutton, R. S. (1978a). Learning theory support for a single channel theory of
+the brain. Unpublished report."
 ,,

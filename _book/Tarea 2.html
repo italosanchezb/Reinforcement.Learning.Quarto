@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -144,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea 1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea 2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,7 +203,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Tarea 1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Tarea 2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></span></a>
   </div>
 </li>
@@ -209,9 +229,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1"><span class="header-section-number">2.1</span> EJERCICIO 1</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2"><span class="header-section-number">2.2</span> EJERCICIO 2</a></li>
-  <li><a href="#apd" id="toc-apd" class="nav-link" data-scroll-target="#apd"><span class="header-section-number">2.3</span> APD</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1"><span class="header-section-number">2.1</span> Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">2.2</span> Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">2.3</span> Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4"><span class="header-section-number">2.4</span> Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5"><span class="header-section-number">2.5</span> Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6"><span class="header-section-number">2.6</span> Exercise 6</a></li>
   </ul>
 </nav>
     </div>
@@ -237,6 +260,19 @@ window.Quarto = {
 </header>
 
 
+<section id="exercise-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">2.1</span> Exercise 1</h2>
+<p><strong>Exercise 1</strong> Read <span class="citation" data-cites="Sutton1998">(Sec 1.1, pp 1-2 <a href="references.html#ref-Sutton1998" role="doc-biblioref">Sutton and Barto 2018</a>)</span> and answer the following. Explain why Reinforcement Learning differs for supervised and unsupervised learning.</p>
+<p>El aprendizaje reforzado se centra en aprender a qué hacer y cómo hacer situaciones que lleven a maximizar una recompensa, por otro lado el aprendizaje supervisado consiste en aprender de un conjuto de entrenamiento de ejemplos etiquetados dados por un supervisor externo con conocimientos. El objetivo de este aprendizaje es que el sistema extrapole o generalice sus respuestas para actuar correctamente en situaciones que no están presentes en el conjunto de entrenamiento.</p>
+</section>
+<section id="exercise-2" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">2.2</span> Exercise 2</h2>
+<p><strong>Exercise 2</strong> See the first Steve Bruton’s youtube video about <a href="https://www.youtube.com/watch?v=0MNVhXEX9to&amp;list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&amp;ab_channel=SteveBrunton">Reinforcement Learning</a>. Then accordingly to its presentation explain what is the meaning of the following expression: <span class="math display">\[V_{\pi}(s)=E\left(\sum_{t}\gamma^tr_t|s_0=s \right)\]</span></p>
+<p>La función mide de una forma que tan buenas son las acciones que se eligen, es decir la función de valor como la recompensa esperada habiendo elegido una política y un estado inicial.</p>
+</section>
+<section id="exercise-3" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">2.3</span> Exercise 3</h2>
+<p><strong>Exercise 3</strong> Form <span class="citation" data-cites="Sutton1998">(see <a href="references.html#ref-Sutton1998" role="doc-biblioref">Sutton and Barto 2018</a>)</span> obtain a time line pear year from 1950 to 2012.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bibtex)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate the Core Packages</span></span>
@@ -263,36 +299,42 @@ window.Quarto = {
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>column <span class="ot">&lt;-</span> <span class="fu">lolli_styles</span>()</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">col_names=</span><span class="cn">TRUE</span>, <span class="at">show_col_types=</span><span class="cn">FALSE</span>, <span class="at">file=</span><span class="st">'rl_time_line.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sort the table by date</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Build a table</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(data) <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cols_hide(columns = event) |&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="fu">cell_text</span>(<span class="at">v_align =</span> <span class="st">"top"</span>),</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> date)) <span class="sc">|&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Sutton and Barto (2018)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sort the table by date</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Build a table</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(data) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cols_hide(columns = event) |&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="fu">cell_text</span>(<span class="at">v_align =</span> <span class="st">"top"</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> date)) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Sutton and Barto (2018)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="pdwtnegutf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pdwtnegutf table {
+<div id="bjedjqvazj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bjedjqvazj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pdwtnegutf thead, #pdwtnegutf tbody, #pdwtnegutf tfoot, #pdwtnegutf tr, #pdwtnegutf td, #pdwtnegutf th {
+#bjedjqvazj thead, #bjedjqvazj tbody, #bjedjqvazj tfoot, #bjedjqvazj tr, #bjedjqvazj td, #bjedjqvazj th {
   border-style: none;
 }
 
-#pdwtnegutf p {
+#bjedjqvazj p {
   margin: 0;
   padding: 0;
 }
 
-#pdwtnegutf .gt_table {
+#bjedjqvazj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -318,12 +360,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_caption {
+#bjedjqvazj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pdwtnegutf .gt_title {
+#bjedjqvazj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -335,7 +377,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#pdwtnegutf .gt_subtitle {
+#bjedjqvazj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -347,7 +389,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#pdwtnegutf .gt_heading {
+#bjedjqvazj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -359,13 +401,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_bottom_border {
+#bjedjqvazj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_col_headings {
+#bjedjqvazj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -380,7 +422,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_col_heading {
+#bjedjqvazj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -400,7 +442,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#pdwtnegutf .gt_column_spanner_outer {
+#bjedjqvazj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -412,15 +454,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#pdwtnegutf .gt_column_spanner_outer:first-child {
+#bjedjqvazj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pdwtnegutf .gt_column_spanner_outer:last-child {
+#bjedjqvazj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pdwtnegutf .gt_column_spanner {
+#bjedjqvazj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -432,11 +474,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#pdwtnegutf .gt_spanner_row {
+#bjedjqvazj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pdwtnegutf .gt_group_heading {
+#bjedjqvazj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -462,7 +504,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#pdwtnegutf .gt_empty_group_heading {
+#bjedjqvazj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -477,15 +519,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#pdwtnegutf .gt_from_md > :first-child {
+#bjedjqvazj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pdwtnegutf .gt_from_md > :last-child {
+#bjedjqvazj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pdwtnegutf .gt_row {
+#bjedjqvazj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -504,7 +546,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#pdwtnegutf .gt_stub {
+#bjedjqvazj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -517,7 +559,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#pdwtnegutf .gt_stub_row_group {
+#bjedjqvazj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -531,15 +573,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#pdwtnegutf .gt_row_group_first td {
+#bjedjqvazj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pdwtnegutf .gt_row_group_first th {
+#bjedjqvazj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pdwtnegutf .gt_summary_row {
+#bjedjqvazj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -549,16 +591,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#pdwtnegutf .gt_first_summary_row {
+#bjedjqvazj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_first_summary_row.thick {
+#bjedjqvazj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pdwtnegutf .gt_last_summary_row {
+#bjedjqvazj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -568,7 +610,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_grand_summary_row {
+#bjedjqvazj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -578,7 +620,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#pdwtnegutf .gt_first_grand_summary_row {
+#bjedjqvazj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -588,7 +630,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_last_grand_summary_row_top {
+#bjedjqvazj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -598,11 +640,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_striped {
+#bjedjqvazj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pdwtnegutf .gt_table_body {
+#bjedjqvazj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -611,7 +653,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_footnotes {
+#bjedjqvazj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -625,7 +667,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_footnote {
+#bjedjqvazj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -634,7 +676,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#pdwtnegutf .gt_sourcenotes {
+#bjedjqvazj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -648,7 +690,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#pdwtnegutf .gt_sourcenote {
+#bjedjqvazj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -656,72 +698,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#pdwtnegutf .gt_left {
+#bjedjqvazj .gt_left {
   text-align: left;
 }
 
-#pdwtnegutf .gt_center {
+#bjedjqvazj .gt_center {
   text-align: center;
 }
 
-#pdwtnegutf .gt_right {
+#bjedjqvazj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pdwtnegutf .gt_font_normal {
+#bjedjqvazj .gt_font_normal {
   font-weight: normal;
 }
 
-#pdwtnegutf .gt_font_bold {
+#bjedjqvazj .gt_font_bold {
   font-weight: bold;
 }
 
-#pdwtnegutf .gt_font_italic {
+#bjedjqvazj .gt_font_italic {
   font-style: italic;
 }
 
-#pdwtnegutf .gt_super {
+#bjedjqvazj .gt_super {
   font-size: 65%;
 }
 
-#pdwtnegutf .gt_footnote_marks {
+#bjedjqvazj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pdwtnegutf .gt_asterisk {
+#bjedjqvazj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pdwtnegutf .gt_indent_1 {
+#bjedjqvazj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pdwtnegutf .gt_indent_2 {
+#bjedjqvazj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pdwtnegutf .gt_indent_3 {
+#bjedjqvazj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pdwtnegutf .gt_indent_4 {
+#bjedjqvazj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pdwtnegutf .gt_indent_5 {
+#bjedjqvazj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pdwtnegutf .katex-display {
+#bjedjqvazj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pdwtnegutf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bjedjqvazj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -738,37 +780,37 @@ window.Quarto = {
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1911</td>
 <td class="gt_row gt_left" headers="event">Primer idea del "trial-and-error learning" (TaEL)</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Thorndike, E. L. (1911). Animal Intelligence. Hafner, Darien, CT.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1927</td>
 <td class="gt_row gt_left" headers="event">Aparece el termino "Reinforcement" en el contexto del aprendizaje animal</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Pavlov, P. I. (1927). Conditioned Reflexes. Oxford University Press, London.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1948</td>
 <td class="gt_row gt_left" headers="event">Turing describe un diseno para un sistema "pleasure-pain system"</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Turing, A. M. (1948). Intelligent Machinery, A Heretical Theory. The Turing Test: Verbal Behavior as the Hallmark of Intelligence, 105.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1954</td>
 <td class="gt_row gt_left" headers="event">Minsky Farley y Clark publican sus investigaciones sobre TaEL.</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Farley, B. G., Clark, W. A. (1954). Simulation of self-organizing systems by digital computer. IRE Transactions on Information Theory, 4:76–84.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1957</td>
 <td class="gt_row gt_left" headers="event">Aparece "Dynamic Programming" (DP)</td>
-<td class="gt_row gt_left" headers="reference">mundo</td>
+<td class="gt_row gt_left" headers="reference">Bellman, R. E. (1957a). Dynamic Programming. Princeton University Press,Princeton.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1957</td>
 <td class="gt_row gt_left" headers="event">Introducen los Markov Decision Processes (MDP)</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Bellman, R. E. (1957b). A Markov decision process. Journal of Mathematical Mechanics, 6:679–684</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1959</td>
 <td class="gt_row gt_left" headers="event">Comienza a utilizarse el "optimal control" (OC)</td>
-<td class="gt_row gt_left" headers="reference">paso</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1959</td>
@@ -778,82 +820,82 @@ window.Quarto = {
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
 <td class="gt_row gt_left" headers="event">Aparece el metodo de iteracion de politicas</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Howard, R. (1960). Dynamic Programming and Markov Processes. MIT Press, Cambridge, MA.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
 <td class="gt_row gt_left" headers="event">Se utilizan por primera vez en ingeniería"Reinforcement" y "Reinforcement Learning"</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Mendel, J. M. (1966). A survey of learning control systems. ISA Transactions,5:297–303</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
 <td class="gt_row gt_left" headers="event">Se originan los "Learning Automata"</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Tsetlin, M. L. (1973). Automaton Theory and Modeling of Biological Systems. Academic Press, New York.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1961</td>
 <td class="gt_row gt_left" headers="event">Se publica "Steps Toward Artificial Intelligence"</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Minsky, M. L. (1961). Steps toward artificial intelligence. Proceedings of the Institute of Radio Engineers, 49:8–30. Reprinted in E. A. Feigenbaum and J. Feldman (eds.), Computers and Thought, pp. 406–450. McGraw-Hill, New York, 1963.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1961</td>
 <td class="gt_row gt_left" headers="event">Se describe un sistema "TaEL" para el tic-tac-toe</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Michie, D. (1963). Experiments on the mechanisation of game learning. 1. characterization of the model and its parameters. Computer Journal,1:232–263.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1963</td>
 <td class="gt_row gt_left" headers="event">Se desarrolla STeLLA</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Andreae, J. H. (1963). STELLA: A scheme for a learning machine. In Proceedings of the 2nd IFAC Congress, Basle, pp. 497–502. Butterworths, London.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1972</td>
 <td class="gt_row gt_left" headers="event">Trabajo de Klopf</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Klopf, A. H. (1972). Brain function and adaptive systems—A heterostatic theory. Technical Report AFCRL-72-0164, Air Force Cambridge Research Laboratories, Bedford, MA. A summary appears in Proceedings of the International Conference on Systems, Man, and Cybernetics. IEEE Systems, Man, and Cybernetics Society, Dallas, TX, 1974.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1973</td>
 <td class="gt_row gt_left" headers="event">Widrow, Gupta y Maitra modifican el LMS.</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Widrow, B., Gupta, N. K., Maitra, S. (1973). Punish/reward: Learning with a critic in adaptive threshold systems. IEEE Transactions on Systems,Man, and Cybernetics, 3:455–465.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1973</td>
 <td class="gt_row gt_left" headers="event">Teoría del aprendizaje de Bush y Mostelle</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Bush, R. R., Mosteller, F. (1955). Stochastic Models for Learning. Wiley, New York.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1977</td>
 <td class="gt_row gt_left" headers="event">Werbos conecta el OC y PD</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Werbos, P. J. (1977). Advanced forecasting methods for global crisis warning and models of intelligence. General Systems Yearbook, 22:25–38.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1978</td>
 <td class="gt_row gt_left" headers="event">Sutton desarrolla las ideas de Klopf</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Sutton, R. S. (1978a). Learning theory support for a single channel theory of the brain. Unpublished report.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1986</td>
 <td class="gt_row gt_left" headers="event">Introducen los clasificadores</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Holland, J. H. (1986). Escaping brittleness: The possibility of general-purpose learning algorithms applied to rule-based systems. In R. S. Michalski, J. G. Carbonell, and T. M. Mitchell (eds.), Machine Learning: An Artificial Intelligence Approach, vol. 2, pp. 593–623. Morgan Kaufmann, San Mateo, CA.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1989</td>
 <td class="gt_row gt_left" headers="event">Watkins integra los metodos de aprendizaje (MA)</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. Ph.D. thesis, Cambridge University.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">1996</td>
 <td class="gt_row gt_left" headers="event">Aparece el termino "Neurodynamic Programming"</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Bertsekas, D. P., Tsitsiklis, J. N. (1989). Parallel and Distributed Computation: Numerical Methods. Prentice-Hall, Englewood Cliffs, NJ</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">2003</td>
-<td class="gt_row gt_left" headers="event">"Reinforcement Learning" en economí</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="event">"Reinforcement Learning" en economia</td>
+<td class="gt_row gt_left" headers="reference">Camerer, C. (2003). Behavioral game theory: Experiments in strategic interaction. Princeton University Press.</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">2012</td>
 <td class="gt_row gt_left" headers="event">Vision general del Reinforcement Learning y Juegos</td>
-<td class="gt_row gt_left" headers="reference">NA</td>
+<td class="gt_row gt_left" headers="reference">Now´e, A., Vrancx, P., De Hauwere, Y. M. (2012). Game theory and multiagent reinforcement learning. In Reinforcement Learning (pp. 441-470).Springer Berlin Heidelberg.</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="date" style="vertical-align: top">NA</td>
@@ -872,13 +914,15 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Adjust some defaults</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">"orange"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>size  <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>source_info <span class="ot">&lt;-</span> <span class="st">"Source: Sutton and Barto (2018)"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Milestones timeline</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">milestones</span>(<span class="at">datatable =</span> data, <span class="at">styles =</span> column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Adjust some defaults</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">"orange"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>size  <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>background_color <span class="ot">&lt;-</span> <span class="st">"lightblue"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>text_size <span class="ot">&lt;-</span> <span class="fl">2.5</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>source_info <span class="ot">&lt;-</span> <span class="st">"Source: Sutton and Barto (2018)"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Milestones timeline</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">milestones</span>(<span class="at">datatable =</span> data, <span class="at">styles =</span> column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
 (`geom_text()`).</code></pre>
@@ -898,28 +942,43 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Tarea-1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Tarea-2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="ejercicio-1" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="ejercicio-1"><span class="header-section-number">2.1</span> EJERCICIO 1</h2>
-<p>En el aprendizaje reforzado un agente aprende a tomar decisiones (acciones) a través de la interacción con su entorno y recibiendo recompensas o castigos en función de las mismas, a diferencia del aprendizaje supervisado, ya que en este tipo de aprendizaje automático, un modelo se entrena utilizando un conjunto de datos que incluye tanto las entradas como las salidas correspondientes (etiquetas). es decir, consiste en aprender a partir<br>
-de un conjunto de ejemplos ya etiquetados y proporcionados por un supervisor externo con conocimientos. Por lo que en este tipo de aprendizaje Cada ejemplo describe una situación especifica, y además existe una etiqueta que indica la acción adecuada que el sistema debe tomar en esa situación, El objetivo de este tipo de aprendizaje es que el<br>
-sistema generalice sus respuestas para que actúe correctamente en situaciones que no están presentes en el conjunto de entrenamiento. Por otra parte El aprendizaje por refuerzo también es diferente de lo que los investigadores del aprendizaje automático llaman aprendizaje no supervisado, que generalmente consiste en<br>
-encontrar estructuras ocultas en conjuntos de datos no etiquetados y Aunque en parte el aprendizaje por refuerzo es un tipo de aprendizaje no supervisado, en realidad este se centra mas que nada en maximizar una recompensa en lugar de buscar patrones ocultos en los datos.</p>
 </section>
-<section id="ejercicio-2" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="ejercicio-2"><span class="header-section-number">2.2</span> EJERCICIO 2</h2>
-<p>es posible pensar que dicha expresión es una función con la cual se mide el desempeño del sistema bajo diferentes políticas de control dado el estado inicial, es decir, nos ayuda a identificar que acciones fueron buenas y cuales fueron malas, además dicha expresión nos da el valor esperado de cuanta recompensa obtendremos en un futuro al elegir dicha politica dado un estado inicial. Por otra parte, el factor de descuento en la expresión, nos ayuda a comparar las recompensas futuras con las recompensas inmediatas, basicamente nos dice que tan a favor estamos de obtener una recompensa en el estado actual frente a un futuro lejano</p>
+<section id="exercise-4" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="exercise-4"><span class="header-section-number">2.4</span> Exercise 4</h2>
+<p><strong>Exercise 4</strong> Consider the following <strong>consumption-saving</strong> problem with dynamics <span class="math display">\[x_{k+1}=(1+r)(x_k-a_k),\hspace{0.5cm}k=0,1,...,N-1,\]</span> and utility function <span class="math display">\[\beta^N(x_N)^{1-\gamma}+\sum_{k=0}^{N-1}\beta^k(a_k)^{1-\gamma}\]</span>. Show that the value functions of the DP algorithm take the form <span class="math display">\[J_k(x)=A_k\beta^kx^{1-\gamma},\]</span> where <span class="math inline">\(A_N=1\)</span> and for <span class="math inline">\(k=N-1,...,0,\)</span> <span class="math display">\[A_k=\left[1+((1+r)\beta A_{k+1})^{\frac{1}{\gamma}} \right]^{\gamma}\]</span> Show also that the optimal policies are <span class="math inline">\(h_k(x)=A_k^{-1/\gamma} x,\)</span> for <span class="math inline">\(k=N-1,\ldots,0\)</span>.</p>
+<p><strong><em>Prueba</em></strong> Procedemos por inducción. Primero comprobamos que se cumple para <span class="math inline">\(n=N-1\)</span>, entonces como <span class="math inline">\(J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}\)</span>, tenemos que</p>
+<p><span class="math display">\[J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\},\]</span> tomando la derivada con respecto a <span class="math inline">\(a\)</span> e igualando a cero. <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}\]</span> <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> entonces <span class="math display">\[\left(\cfrac{x-a}{a}\right)^\gamma=\beta(1+r)^{1-\gamma}\implies \cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\implies a=\dfrac{x}{[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}-\]</span> Sea <span class="math inline">\(a_0\)</span> es punto donde se alcanza el mínimo, por tanto <span class="math display">\[J_{N-1}(x)=\beta^{N-1}(a_0)^{1-\gamma}+\beta^N(1+r)^{1-\gamma}(x-a_0)^{1-\gamma}.\]</span> Desarrollando <span class="math display">\[J_{N-1}(x)=\dfrac{\beta^{N-1}x^{1-\gamma}}{([\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1)^{1-\gamma}}+\beta^N(1+r)^{1-\gamma}\left[\dfrac{x[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}}{\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\right]^{1-\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=\beta^{N-1}x^{1-\gamma}\left[[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1\right]^{\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=A_{N-1}\beta^{N-1}x^{1-\gamma}\]</span> con <span class="math display">\[A_{N-1}=\left(1+((1+r)^{1-\gamma}\beta)^{\frac{1}{\gamma}}\right)^{\gamma}\]</span> Ahora, supongamos que es válido para <span class="math inline">\(n=k+1\)</span>, 4 <span class="math display">\[J_{k+1}(x)=A_{k+1}\beta^{k+1}x^{1-\gamma}\]</span>. De aquí <span class="math display">\[J_k(x)=\min_{a\in (0,x)}\left\{\beta^ka^{1-\gamma}+A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Encontrando el punto mínimo <span class="math display">\[(1-\gamma)\beta^ka^{-\gamma}-A_{k+1}\beta^{k+1}(1+\gamma)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\beta^k\left[ a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}  \right]=0\]</span> <span class="math display">\[a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=A_{k+1}\beta(1+\gamma)^{1-\gamma}\]</span> <span class="math display">\[a=\dfrac{x}{\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1}\]</span> De igual forma sea el punto mínimo <span class="math inline">\(a_0\)</span>, se tiene <span class="math display">\[J_k(x)=\dfrac{\beta^kx^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}+\dfrac{A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}\left(x[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right)^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}\]</span> Simplificando se concluye que <span class="math display">\[\dfrac{\beta^kx^{1-\gamma}\left( 1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)}{\left(1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)^{1-\gamma}}=\beta^kx^{1-\gamma}A_k\]</span></p>
 </section>
-<section id="apd" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="apd"><span class="header-section-number">2.3</span> APD</h2>
-<p>del algoritmo de la programación dinámica se sigue que para este caso particular <span class="math inline">\(J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}\)</span></p>
-<p>luego, para <span class="math inline">\(k= N-1\)</span> <span class="math display">\[J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\}\]</span> derivando con respecto a <span class="math inline">\(a\)</span> obtenemos <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}\]</span>} depués igualando a cero <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> entonces <span class="math display">\[(\cfrac{x-a}{a})^\gamma=\beta(1+r)^{1-\gamma}\]</span> <span class="math display">\[\cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\]</span> <span class="math display">\[a=\dfrac{x}{[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\]</span> <span class="math display">\[J_{N-1}(x)=\beta^{N-1}(a_0)^{1-\gamma}+\beta^N(1+r)^{1-\gamma}(x-a_0)^{1-\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=\dfrac{\beta^{N-1}x^{1-\gamma}}{([\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1)^{1-\gamma}}+\beta^N(1+r)^{1-\gamma}\left[\dfrac{x[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}}{\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\right]^{1-\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=\beta^{N-1}x^{1-\gamma}\left[[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1\right]^{\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=A_{N-1}\beta^{N-1}x^{1-\gamma}\]</span> <span class="math display">\[A_{N-1}=\left(1+((1+r)^{1-\gamma}\beta)^{\frac{1}{\gamma}}\right)^{\gamma}\]</span> Supongamos que se cumple para <span class="math inline">\(n=k+1\)</span>, entonces <span class="math inline">\(J_{k+1}(x)=A_{k+1}\beta^{k+1}x^{1-\gamma}\)</span>. Ahora <span class="math display">\[J_k(x)=\min_{0&lt;a&lt;x}\left\{\beta^ka^{1-\gamma}+A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Derivando e igualando a 0 para encontrar el mínimo <span class="math display">\[(1-\gamma)\beta^ka^{-\gamma}-A_{k+1}\beta^{k+1}(1+\gamma)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> Veamos que <span class="math display">\[(1-\gamma)\beta^k\left[ a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}  \right]=0\]</span> <span class="math display">\[a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> Despejando <span class="math inline">\(a\)</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=A_{k+1}\beta(1+\gamma)^{1-\gamma}\]</span> <span class="math display">\[a=\dfrac{x}{\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1}\]</span> A este punto lo renombramos como <span class="math inline">\(a_0\)</span> y sustituimos <span class="math display">\[J_k(x)=\dfrac{\beta^kx^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}+\dfrac{A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}\left(x[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right)^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}\]</span> Desarrollando y reacomodando términos llegamos a <span class="math display">\[\dfrac{\beta^kx^{1-\gamma}\left( 1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)}{\left(1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)^{1-\gamma}}=\beta^kx^{1-\gamma}A_k\]</span> ## 5 <span class="math display">\[cx^{1-\gamma}=\min\left\{ a^{1-\gamma}+\beta c(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Derivando respecto a <span class="math inline">\(a\)</span> e igualando a 0 <span class="math display">\[(1-\gamma)a^{-\gamma}-\beta c(1+r)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\left[ a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}\right]=0\]</span> <span class="math display">\[a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> Despenjando <span class="math inline">\(a\)</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=\beta c(1+r)^{1-\gamma}\]</span> <span class="math display">\[x=a\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+a\]</span> <span class="math display">\[a_0=a=\dfrac{x}{\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+1}\]</span> Sustituyendo <span class="math inline">\(a_0\)</span>, así <span class="math display">\[cx^{1-\gamma}=\dfrac{x^{1-\gamma}+\beta c(1+r)^{1-\gamma}x^{1-\gamma}\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} \right]^{1-\gamma}}{\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} +1\right]^{1-\gamma}}\]</span> <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c (1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> entonces <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c=\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\left[1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}\right]\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\dfrac{1}{1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}}\]</span></p>
+<section id="exercise-5" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">2.5</span> Exercise 5</h2>
+<p><strong>Exercise 5</strong> Consider now the infinite–horizon version of the above consumption–saving problem.</p>
+<ol type="1">
+<li>Write down the associated Bellman equation.</li>
+<li>Argue why a solution to the Bellman equation should be of the form <span class="math display">\[v(x)=cx^{1-\gamma}\]</span>, where <span class="math inline">\(c\)</span> is constant. Find the constant and the stationary optimal policy.</li>
+</ol>
+<p><strong><em>Prueba</em></strong> Sea <span class="math display">\[cx^{1-\gamma}=\min\left\{ a^{1-\gamma}+\beta c(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Calculando el mínimo <span class="math display">\[(1-\gamma)a^{-\gamma}-\beta c(1+r)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\left[ a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}\right]=0\]</span> <span class="math display">\[a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=\beta c(1+r)^{1-\gamma}\]</span> <span class="math display">\[x=a\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+a\]</span> <span class="math display">\[a_0=a=\dfrac{x}{\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+1}\]</span> Sustitimos <span class="math inline">\(a_0\)</span> <span class="math display">\[cx^{1-\gamma}=\dfrac{x^{1-\gamma}+\beta c(1+r)^{1-\gamma}x^{1-\gamma}\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} \right]^{1-\gamma}}{\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} +1\right]^{1-\gamma}}\]</span> <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c (1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> así, <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c=\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\left[1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}\right]\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\dfrac{1}{1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}}\]</span></p>
+</section>
+<section id="exercise-6" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">2.6</span> Exercise 6</h2>
+<p><strong>Exercise 6</strong> Let <span class="math inline">\(\{\xi_k\}\)</span> be a sequence of iid random variables such that <span class="math inline">\(E[\xi]=0\)</span> and <span class="math inline">\(E[\xi^2]=d\)</span>. Consider the dynamics <span class="math display">\[x_{k+1}=x_k+a_k+\xi_k,\hspace{0.5cm}k=0,1,2,...,\]</span> and the discounted cost <span class="math display">\[E\sum \beta^k(a_k^2+x_k^2).\]</span> i. Write down the associated Bellman equation.</p>
+<ol start="2" type="i">
+<li><p>Conjecture that the solution to the Bellman equation takes the form <span class="math inline">\(v(x)=ax^2+b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constant.</p></li>
+<li><p>Determine the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p></li>
+<li><p>Conjecture that the solution to the Bellman equation takes the form <span class="math inline">\(v(x)=ax^2+b\)</span>, where <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> are constant. Determine the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. <strong><em>Prueba</em></strong> Sea <span class="math inline">\(A=a\)</span> y <span class="math inline">\(B=b\)</span>, entonces <span class="math display">\[Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta E[A(x+a+\xi)^2+B]\}\]</span> <span class="math display">\[Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta AE[(x+a+\xi)^2]+\beta B\}\]</span> <span class="math display">\[=\min_{a\in A(x)}\{a^2+x^2+A\beta E[x^2+2ax+a^2+2(x+a)\xi+\xi^2]+\beta B\}\]</span> <span class="math display">\[=\min_{a\in A(x)}\{a^2+x^2+A\beta x^2+2axA\beta+A\beta a^2+A\beta d+\beta B\}\]</span> Encontrando el mínimo con la derivada <span class="math display">\[2a+2xA\beta+2A\beta a=0\]</span> entonces, <span class="math display">\[a=\dfrac{-xA\beta}{1+A\beta}\]</span> así <span class="math display">\[Ax^2+B=\dfrac{(xA\beta)^2}{(a+A\beta)^2}+x^2+\beta E\left[A\left(\dfrac{x}{1+A\beta}+\xi \right)^2 \right]+\beta B\]</span> <span class="math display">\[=\dfrac{x^2A^2\beta^2}{(1+A\beta)^2}+x^2+A\beta E\left[ \dfrac{x^2}{(1+A\beta)^2}+\dfrac{2x\xi}{1+A\beta}+\xi^2\right]+\beta B\]</span></p></li>
+</ol>
+<p><span class="math display">\[=\dfrac{x^2A\beta(1+A\beta)}{(1+A\beta)^2}+x^2+A\beta d+\beta B\]</span> <span class="math display">\[=x^2\left(1+\dfrac{A\beta}{1+A\beta}\right)+A\beta d+\beta B\]</span> Por lo que <span class="math display">\[A=1+\dfrac{A\beta}{1+A\beta},\hspace{0.5cm}B=\dfrac{A\beta d}{1-\beta}\]</span> De esta forma <span class="math display">\[A=\dfrac{1+2A\beta}{1+A\beta}\]</span> <span class="math display">\[A^2\beta+A(1-2\beta)-1=0\]</span> Obteniendo las soluciones <span class="math display">\[A=\dfrac{-1+2\beta\pm \sqrt{4\beta^2+1}}{2\beta}\]</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Sutton1998" class="csl-entry" role="listitem">
+Sutton, Richard S., and Andrew G. Barto. 2018. <em>Reinforcement Learning: An Introduction</em>. Second. The MIT Press. <a href="http://incompleteideas.net/book/the-book-2nd.html">http://incompleteideas.net/book/the-book-2nd.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

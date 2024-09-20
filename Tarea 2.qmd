@@ -1,0 +1,170 @@
+# Tarea 1
+
+
+## Exercise 1
+**Exercise 1** Read [Sec 1.1, pp 1-2 @Sutton1998] and answer the following.
+Explain why Reinforcement Learning differs for supervised and unsupervised learning.
+
+El aprendizaje reforzado se centra en aprender a qué hacer y cómo hacer situaciones que lleven a maximizar una recompensa, por otro lado el aprendizaje supervisado consiste en aprender de un conjuto de entrenamiento de ejemplos etiquetados dados por un supervisor externo con conocimientos. El objetivo de este aprendizaje es que el sistema extrapole o generalice sus respuestas para actuar correctamente en situaciones que no están presentes en el conjunto de entrenamiento.
+
+
+## Exercise 2
+**Exercise 2** See the first Steve Bruton's youtube video about [Reinforcement Learning](https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&ab_channel=SteveBrunton). Then accordingly to its presentation explain what is the meaning of the following expression:
+$$V_{\pi}(s)=E\left(\sum_{t}\gamma^tr_t|s_0=s \right)$$
+
+
+La función mide de una forma que tan buenas son las acciones que se eligen, es decir la función de valor como la recompensa esperada habiendo elegido una política y un estado inicial.
+
+## Exercise 3
+**Exercise 3** Form [see @Sutton1998 ] obtain a time line pear year from 1950 to 2012.
+```{r}
+library(bibtex)
+## Activate the Core Packages
+library(tidyverse) ## Brings in a core of useful functions
+```
+
+```{r}
+library(gt)        ## Tables
+## Specific packages
+library(milestones)
+## Initialize defaults
+## Initialize defaults
+column <- lolli_styles()
+
+data <- read_csv(col_names=TRUE, show_col_types=FALSE, file='rl_time_line.csv')
+```
+
+```{r}
+## Sort the table by date
+data <- data |>
+  arrange(date)
+
+## Build a table
+gt(data) |>
+  #cols_hide(columns = event) |>
+  tab_style(cell_text(v_align = "top"),
+            locations = cells_body(columns = date)) |>
+  tab_source_note(source_note = "Source: Sutton and Barto (2018)") 
+```
+
+
+```{r}
+## Adjust some defaults
+column$color <- "orange"
+column$size  <- 15
+column$background_color <- "lightblue"
+column$text_size <- 2.5
+column$source_info <- "Source: Sutton and Barto (2018)"
+
+## Milestones timeline
+milestones(datatable = data, styles = column)
+
+```
+
+
+
+## Exercise 4
+**Exercise 4** Consider the following **consumption-saving** problem with dynamics
+$$x_{k+1}=(1+r)(x_k-a_k),\hspace{0.5cm}k=0,1,...,N-1,$$
+and utility function
+$$\beta^N(x_N)^{1-\gamma}+\sum_{k=0}^{N-1}\beta^k(a_k)^{1-\gamma}$$.
+Show that the value functions of the DP algorithm take the form
+$$J_k(x)=A_k\beta^kx^{1-\gamma},$$
+where $A_N=1$ and for $k=N-1,...,0,$
+$$A_k=\left[1+((1+r)\beta A_{k+1})^{\frac{1}{\gamma}} \right]^{\gamma}$$
+Show also that the optimal policies are $h_k(x)=A_k^{-1/\gamma} x,$ for $k=N-1,\ldots,0$.
+
+***Prueba***
+ Procedemos por inducción. Primero comprobamos que se cumple para $n=N-1$, entonces como
+$J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}$, tenemos que
+
+$$J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\},$$
+tomando la derivada con respecto a $a$ e igualando a cero.
+$$(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}$$
+$$(1-\gamma)\beta^{N-1}a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0$$
+entonces 
+$$\left(\cfrac{x-a}{a}\right)^\gamma=\beta(1+r)^{1-\gamma}\implies \cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\implies a=\dfrac{x}{[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}-$$
+Sea $a_0$ es punto donde se alcanza el mínimo, por tanto
+$$J_{N-1}(x)=\beta^{N-1}(a_0)^{1-\gamma}+\beta^N(1+r)^{1-\gamma}(x-a_0)^{1-\gamma}.$$
+Desarrollando
+$$J_{N-1}(x)=\dfrac{\beta^{N-1}x^{1-\gamma}}{([\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1)^{1-\gamma}}+\beta^N(1+r)^{1-\gamma}\left[\dfrac{x[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}}{\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\right]^{1-\gamma}$$
+$$J_{N-1}(x)=\beta^{N-1}x^{1-\gamma}\left[[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1\right]^{\gamma}$$
+$$J_{N-1}(x)=A_{N-1}\beta^{N-1}x^{1-\gamma}$$
+con
+$$A_{N-1}=\left(1+((1+r)^{1-\gamma}\beta)^{\frac{1}{\gamma}}\right)^{\gamma}$$
+Ahora, supongamos que es válido para $n=k+1$, 4
+$$J_{k+1}(x)=A_{k+1}\beta^{k+1}x^{1-\gamma}$$. 
+De aquí
+$$J_k(x)=\min_{a\in (0,x)}\left\{\beta^ka^{1-\gamma}+A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}$$
+Encontrando el punto mínimo
+$$(1-\gamma)\beta^ka^{-\gamma}-A_{k+1}\beta^{k+1}(1+\gamma)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0$$
+$$(1-\gamma)\beta^k\left[ a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}  \right]=0$$
+$$a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0$$
+$$\left(\dfrac{x-a}{a}\right)^{\gamma}=A_{k+1}\beta(1+\gamma)^{1-\gamma}$$
+$$a=\dfrac{x}{\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1}$$
+De igual forma sea el punto mínimo $a_0$, se tiene
+$$J_k(x)=\dfrac{\beta^kx^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}+\dfrac{A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}\left(x[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right)^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}$$
+Simplificando se concluye que
+$$\dfrac{\beta^kx^{1-\gamma}\left( 1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)}{\left(1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)^{1-\gamma}}=\beta^kx^{1-\gamma}A_k$$
+
+## Exercise 5
+**Exercise 5** Consider now the infinite–horizon version of the above consumption–saving problem.
+
+1. Write down the associated Bellman equation.
+2. Argue why a solution to the Bellman equation should be of the form
+$$v(x)=cx^{1-\gamma}$$, where $c$ is constant. Find the constant and the stationary optimal policy.
+
+***Prueba***
+Sea
+$$cx^{1-\gamma}=\min\left\{ a^{1-\gamma}+\beta c(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}$$
+Calculando el mínimo
+$$(1-\gamma)a^{-\gamma}-\beta c(1+r)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0$$
+$$(1-\gamma)\left[ a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}\right]=0$$
+$$a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}=0$$
+$$\left(\dfrac{x-a}{a}\right)^{\gamma}=\beta c(1+r)^{1-\gamma}$$
+$$x=a\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+a$$
+$$a_0=a=\dfrac{x}{\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+1}$$
+Sustitimos $a_0$
+$$cx^{1-\gamma}=\dfrac{x^{1-\gamma}+\beta c(1+r)^{1-\gamma}x^{1-\gamma}\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} \right]^{1-\gamma}}{\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} +1\right]^{1-\gamma}}$$
+$$cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c (1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}$$
+así,
+$$cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}$$
+$$c=\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}$$
+$$c^{\frac{1}{\gamma}}=1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}$$
+$$c^{\frac{1}{\gamma}}=\left[1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}\right]$$
+$$c^{\frac{1}{\gamma}}=\dfrac{1}{1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}}$$
+
+## Exercise 6
+**Exercise 6** Let $\{\xi_k\}$ be a sequence of iid random variables such that $E[\xi]=0$ and $E[\xi^2]=d$. Consider the dynamics
+$$x_{k+1}=x_k+a_k+\xi_k,\hspace{0.5cm}k=0,1,2,...,$$
+and the discounted cost
+$$E\sum \beta^k(a_k^2+x_k^2).$$
+i. Write down the associated Bellman equation.
+
+ii. Conjecture that the solution to the Bellman equation takes the form $v(x)=ax^2+b$, where $a$ and $b$ are constant.
+
+iii. Determine the constants $a$ and $b$. 
+
+iv. Conjecture that the solution to the Bellman equation takes the form $v(x)=ax^2+b$, where $a$ y $b$ are constant. Determine the constants $a$ and $b$.
+***Prueba*** Sea $A=a$ y $B=b$, entonces
+$$Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta E[A(x+a+\xi)^2+B]\}$$
+$$Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta AE[(x+a+\xi)^2]+\beta B\}$$
+$$=\min_{a\in A(x)}\{a^2+x^2+A\beta E[x^2+2ax+a^2+2(x+a)\xi+\xi^2]+\beta B\}$$
+$$=\min_{a\in A(x)}\{a^2+x^2+A\beta x^2+2axA\beta+A\beta a^2+A\beta d+\beta B\}$$
+Encontrando el mínimo con la derivada
+$$2a+2xA\beta+2A\beta a=0$$
+entonces,
+$$a=\dfrac{-xA\beta}{1+A\beta}$$
+así
+$$Ax^2+B=\dfrac{(xA\beta)^2}{(a+A\beta)^2}+x^2+\beta E\left[A\left(\dfrac{x}{1+A\beta}+\xi \right)^2 \right]+\beta B$$
+$$=\dfrac{x^2A^2\beta^2}{(1+A\beta)^2}+x^2+A\beta E\left[ \dfrac{x^2}{(1+A\beta)^2}+\dfrac{2x\xi}{1+A\beta}+\xi^2\right]+\beta B$$
+
+$$=\dfrac{x^2A\beta(1+A\beta)}{(1+A\beta)^2}+x^2+A\beta d+\beta B$$
+$$=x^2\left(1+\dfrac{A\beta}{1+A\beta}\right)+A\beta d+\beta B$$
+Por lo que 
+$$A=1+\dfrac{A\beta}{1+A\beta},\hspace{0.5cm}B=\dfrac{A\beta d}{1-\beta}$$
+De esta forma 
+$$A=\dfrac{1+2A\beta}{1+A\beta}$$
+$$A^2\beta+A(1-2\beta)-1=0$$
+Obteniendo las soluciones
+$$A=\dfrac{-1+2\beta\pm \sqrt{4\beta^2+1}}{2\beta}$$
