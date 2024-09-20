@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Tarea 1 – Reinforcement Learning Quarto</title>
+<title>3&nbsp; Tarea 1 – Reinforcement Learning Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -144,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea 2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea 2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -172,25 +192,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea 2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -209,12 +229,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1"><span class="header-section-number">2.1</span> Exercise 1</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">2.2</span> Exercise 2</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">2.3</span> Exercise 3</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4"><span class="header-section-number">2.4</span> Exercise 4</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5"><span class="header-section-number">2.5</span> Exercise 5</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6"><span class="header-section-number">2.6</span> Exercise 6</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1"><span class="header-section-number">3.1</span> Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">3.2</span> Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">3.3</span> Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4"><span class="header-section-number">3.4</span> Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5"><span class="header-section-number">3.5</span> Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6"><span class="header-section-number">3.6</span> Exercise 6</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +243,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 1</span></h1>
 </div>
 
 
@@ -240,19 +260,19 @@ window.Quarto = {
 </header>
 
 
-<section id="exercise-1" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">2.1</span> Exercise 1</h2>
-<p><em>Exercise 1</em> Read (Sec 1.1, pp 1-2 ) and answer the following. Explain why Reinforcement Learning differs for supervised and unsupervised learning.</p>
+<section id="exercise-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">3.1</span> Exercise 1</h2>
+<p><strong>Exercise 1</strong> Read <span class="citation" data-cites="Sutton1998">(Sec 1.1, pp 1-2 <a href="references.html#ref-Sutton1998" role="doc-biblioref">Sutton and Barto 2018</a>)</span> and answer the following. Explain why Reinforcement Learning differs for supervised and unsupervised learning.</p>
 <p>El aprendizaje reforzado se centra en aprender a qué hacer y cómo hacer situaciones que lleven a maximizar una recompensa, por otro lado el aprendizaje supervisado consiste en aprender de un conjuto de entrenamiento de ejemplos etiquetados dados por un supervisor externo con conocimientos. El objetivo de este aprendizaje es que el sistema extrapole o generalice sus respuestas para actuar correctamente en situaciones que no están presentes en el conjunto de entrenamiento.</p>
 </section>
-<section id="exercise-2" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">2.2</span> Exercise 2</h2>
-<p><em>Exercise 2</em> See the first Steve Bruton’s youtube video about <a href="https://www.youtube.com/watch?v=0MNVhXEX9to&amp;list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&amp;ab_channel=SteveBrunton">Reinforcement Learning</a>. Then accordingly to its presentation explain what is the meaning of the following expression: <span class="math display">\[V_{\pi}(s)=E\left(\sum_{t}\gamma^tr_t|s_0=s \right)\]</span></p>
+<section id="exercise-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">3.2</span> Exercise 2</h2>
+<p><strong>Exercise 2</strong> See the first Steve Bruton’s youtube video about <a href="https://www.youtube.com/watch?v=0MNVhXEX9to&amp;list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&amp;ab_channel=SteveBrunton">Reinforcement Learning</a>. Then accordingly to its presentation explain what is the meaning of the following expression: <span class="math display">\[V_{\pi}(s)=E\left(\sum_{t}\gamma^tr_t|s_0=s \right)\]</span></p>
 <p>La función mide de una forma que tan buenas son las acciones que se eligen, es decir la función de valor como la recompensa esperada habiendo elegido una política y un estado inicial.</p>
 </section>
-<section id="exercise-3" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">2.3</span> Exercise 3</h2>
-<p><em>Exercise 3</em> Form (see ) obtain a time line pear year from 1950 to 2012.</p>
+<section id="exercise-3" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">3.3</span> Exercise 3</h2>
+<p><strong>Exercise 3</strong> Form <span class="citation" data-cites="Sutton1998">(see <a href="references.html#ref-Sutton1998" role="doc-biblioref">Sutton and Barto 2018</a>)</span> obtain a time line pear year from 1950 to 2012.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bibtex)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate the Core Packages</span></span>
@@ -298,23 +318,23 @@ e.g.:
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> date)) <span class="sc">|&gt;</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Sutton and Barto (2018)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ggjgdbwnvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ggjgdbwnvn table {
+<div id="ontgmlahgg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ontgmlahgg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ggjgdbwnvn thead, #ggjgdbwnvn tbody, #ggjgdbwnvn tfoot, #ggjgdbwnvn tr, #ggjgdbwnvn td, #ggjgdbwnvn th {
+#ontgmlahgg thead, #ontgmlahgg tbody, #ontgmlahgg tfoot, #ontgmlahgg tr, #ontgmlahgg td, #ontgmlahgg th {
   border-style: none;
 }
 
-#ggjgdbwnvn p {
+#ontgmlahgg p {
   margin: 0;
   padding: 0;
 }
 
-#ggjgdbwnvn .gt_table {
+#ontgmlahgg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -340,12 +360,12 @@ e.g.:
   border-left-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_caption {
+#ontgmlahgg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ggjgdbwnvn .gt_title {
+#ontgmlahgg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -357,7 +377,7 @@ e.g.:
   border-bottom-width: 0;
 }
 
-#ggjgdbwnvn .gt_subtitle {
+#ontgmlahgg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -369,7 +389,7 @@ e.g.:
   border-top-width: 0;
 }
 
-#ggjgdbwnvn .gt_heading {
+#ontgmlahgg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -381,13 +401,13 @@ e.g.:
   border-right-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_bottom_border {
+#ontgmlahgg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_col_headings {
+#ontgmlahgg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -402,7 +422,7 @@ e.g.:
   border-right-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_col_heading {
+#ontgmlahgg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -422,7 +442,7 @@ e.g.:
   overflow-x: hidden;
 }
 
-#ggjgdbwnvn .gt_column_spanner_outer {
+#ontgmlahgg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -434,15 +454,15 @@ e.g.:
   padding-right: 4px;
 }
 
-#ggjgdbwnvn .gt_column_spanner_outer:first-child {
+#ontgmlahgg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ggjgdbwnvn .gt_column_spanner_outer:last-child {
+#ontgmlahgg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ggjgdbwnvn .gt_column_spanner {
+#ontgmlahgg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -454,11 +474,11 @@ e.g.:
   width: 100%;
 }
 
-#ggjgdbwnvn .gt_spanner_row {
+#ontgmlahgg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ggjgdbwnvn .gt_group_heading {
+#ontgmlahgg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -484,7 +504,7 @@ e.g.:
   text-align: left;
 }
 
-#ggjgdbwnvn .gt_empty_group_heading {
+#ontgmlahgg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -499,15 +519,15 @@ e.g.:
   vertical-align: middle;
 }
 
-#ggjgdbwnvn .gt_from_md > :first-child {
+#ontgmlahgg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ggjgdbwnvn .gt_from_md > :last-child {
+#ontgmlahgg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ggjgdbwnvn .gt_row {
+#ontgmlahgg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -526,7 +546,7 @@ e.g.:
   overflow-x: hidden;
 }
 
-#ggjgdbwnvn .gt_stub {
+#ontgmlahgg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -539,7 +559,7 @@ e.g.:
   padding-right: 5px;
 }
 
-#ggjgdbwnvn .gt_stub_row_group {
+#ontgmlahgg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -553,15 +573,15 @@ e.g.:
   vertical-align: top;
 }
 
-#ggjgdbwnvn .gt_row_group_first td {
+#ontgmlahgg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ggjgdbwnvn .gt_row_group_first th {
+#ontgmlahgg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ggjgdbwnvn .gt_summary_row {
+#ontgmlahgg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -571,16 +591,16 @@ e.g.:
   padding-right: 5px;
 }
 
-#ggjgdbwnvn .gt_first_summary_row {
+#ontgmlahgg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_first_summary_row.thick {
+#ontgmlahgg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ggjgdbwnvn .gt_last_summary_row {
+#ontgmlahgg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -590,7 +610,7 @@ e.g.:
   border-bottom-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_grand_summary_row {
+#ontgmlahgg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -600,7 +620,7 @@ e.g.:
   padding-right: 5px;
 }
 
-#ggjgdbwnvn .gt_first_grand_summary_row {
+#ontgmlahgg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -610,7 +630,7 @@ e.g.:
   border-top-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_last_grand_summary_row_top {
+#ontgmlahgg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -620,11 +640,11 @@ e.g.:
   border-bottom-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_striped {
+#ontgmlahgg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ggjgdbwnvn .gt_table_body {
+#ontgmlahgg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -633,7 +653,7 @@ e.g.:
   border-bottom-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_footnotes {
+#ontgmlahgg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -647,7 +667,7 @@ e.g.:
   border-right-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_footnote {
+#ontgmlahgg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -656,7 +676,7 @@ e.g.:
   padding-right: 5px;
 }
 
-#ggjgdbwnvn .gt_sourcenotes {
+#ontgmlahgg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -670,7 +690,7 @@ e.g.:
   border-right-color: #D3D3D3;
 }
 
-#ggjgdbwnvn .gt_sourcenote {
+#ontgmlahgg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -678,72 +698,72 @@ e.g.:
   padding-right: 5px;
 }
 
-#ggjgdbwnvn .gt_left {
+#ontgmlahgg .gt_left {
   text-align: left;
 }
 
-#ggjgdbwnvn .gt_center {
+#ontgmlahgg .gt_center {
   text-align: center;
 }
 
-#ggjgdbwnvn .gt_right {
+#ontgmlahgg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ggjgdbwnvn .gt_font_normal {
+#ontgmlahgg .gt_font_normal {
   font-weight: normal;
 }
 
-#ggjgdbwnvn .gt_font_bold {
+#ontgmlahgg .gt_font_bold {
   font-weight: bold;
 }
 
-#ggjgdbwnvn .gt_font_italic {
+#ontgmlahgg .gt_font_italic {
   font-style: italic;
 }
 
-#ggjgdbwnvn .gt_super {
+#ontgmlahgg .gt_super {
   font-size: 65%;
 }
 
-#ggjgdbwnvn .gt_footnote_marks {
+#ontgmlahgg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ggjgdbwnvn .gt_asterisk {
+#ontgmlahgg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ggjgdbwnvn .gt_indent_1 {
+#ontgmlahgg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ggjgdbwnvn .gt_indent_2 {
+#ontgmlahgg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ggjgdbwnvn .gt_indent_3 {
+#ontgmlahgg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ggjgdbwnvn .gt_indent_4 {
+#ontgmlahgg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ggjgdbwnvn .gt_indent_5 {
+#ontgmlahgg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ggjgdbwnvn .katex-display {
+#ontgmlahgg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ggjgdbwnvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ontgmlahgg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -928,14 +948,14 @@ e.g.:
 </div>
 </div>
 </section>
-<section id="exercise-4" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="exercise-4"><span class="header-section-number">2.4</span> Exercise 4</h2>
+<section id="exercise-4" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="exercise-4"><span class="header-section-number">3.4</span> Exercise 4</h2>
 <p><strong>Exercise 4</strong> Consider the following <strong>consumption-saving</strong> problem with dynamics <span class="math display">\[x_{k+1}=(1+r)(x_k-a_k),\hspace{0.5cm}k=0,1,...,N-1,\]</span> and utility function <span class="math display">\[\beta^N(x_N)^{1-\gamma}+\sum_{k=0}^{N-1}\beta^k(a_k)^{1-\gamma}\]</span>. Show that the value functions of the DP algorithm take the form <span class="math display">\[J_k(x)=A_k\beta^kx^{1-\gamma},\]</span> where <span class="math inline">\(A_N=1\)</span> and for <span class="math inline">\(k=N-1,...,0,\)</span> <span class="math display">\[A_k=\left[1+((1+r)\beta A_{k+1})^{\frac{1}{\gamma}} \right]^{\gamma}\]</span> Show also that the optimal policies are <span class="math inline">\(h_k(x)=A_k^{-1/\gamma} x,\)</span> for <span class="math inline">\(k=N-1,\ldots,0\)</span>.</p>
 <p><strong><em>Prueba</em></strong> Procedemos por inducción. Primero comprobamos que se cumple para <span class="math inline">\(n=N-1\)</span>, entonces como <span class="math inline">\(J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}\)</span>, tenemos que</p>
 <p><span class="math display">\[J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\},\]</span> tomando la derivada con respecto a <span class="math inline">\(a\)</span> e igualando a cero. <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}\]</span> <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> entonces <span class="math display">\[\left(\cfrac{x-a}{a}\right)^\gamma=\beta(1+r)^{1-\gamma}\implies \cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\implies a=\dfrac{x}{[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}-\]</span> Sea <span class="math inline">\(a_0\)</span> es punto donde se alcanza el mínimo, por tanto <span class="math display">\[J_{N-1}(x)=\beta^{N-1}(a_0)^{1-\gamma}+\beta^N(1+r)^{1-\gamma}(x-a_0)^{1-\gamma}.\]</span> Desarrollando <span class="math display">\[J_{N-1}(x)=\dfrac{\beta^{N-1}x^{1-\gamma}}{([\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1)^{1-\gamma}}+\beta^N(1+r)^{1-\gamma}\left[\dfrac{x[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}}{\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\right]^{1-\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=\beta^{N-1}x^{1-\gamma}\left[[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1\right]^{\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=A_{N-1}\beta^{N-1}x^{1-\gamma}\]</span> con <span class="math display">\[A_{N-1}=\left(1+((1+r)^{1-\gamma}\beta)^{\frac{1}{\gamma}}\right)^{\gamma}\]</span> Ahora, supongamos que es válido para <span class="math inline">\(n=k+1\)</span>, 4 <span class="math display">\[J_{k+1}(x)=A_{k+1}\beta^{k+1}x^{1-\gamma}\]</span>. De aquí <span class="math display">\[J_k(x)=\min_{a\in (0,x)}\left\{\beta^ka^{1-\gamma}+A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Encontrando el punto mínimo <span class="math display">\[(1-\gamma)\beta^ka^{-\gamma}-A_{k+1}\beta^{k+1}(1+\gamma)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\beta^k\left[ a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}  \right]=0\]</span> <span class="math display">\[a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=A_{k+1}\beta(1+\gamma)^{1-\gamma}\]</span> <span class="math display">\[a=\dfrac{x}{\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1}\]</span> De igual forma sea el punto mínimo <span class="math inline">\(a_0\)</span>, se tiene <span class="math display">\[J_k(x)=\dfrac{\beta^kx^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}+\dfrac{A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}\left(x[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right)^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}\]</span> Simplificando se concluye que <span class="math display">\[\dfrac{\beta^kx^{1-\gamma}\left( 1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)}{\left(1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)^{1-\gamma}}=\beta^kx^{1-\gamma}A_k\]</span></p>
 </section>
-<section id="exercise-5" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">2.5</span> Exercise 5</h2>
+<section id="exercise-5" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">3.5</span> Exercise 5</h2>
 <p><strong>Exercise 5</strong> Consider now the infinite–horizon version of the above consumption–saving problem.</p>
 <ol type="1">
 <li>Write down the associated Bellman equation.</li>
@@ -943,9 +963,9 @@ e.g.:
 </ol>
 <p><strong><em>Prueba</em></strong> Sea <span class="math display">\[cx^{1-\gamma}=\min\left\{ a^{1-\gamma}+\beta c(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Calculando el mínimo <span class="math display">\[(1-\gamma)a^{-\gamma}-\beta c(1+r)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\left[ a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}\right]=0\]</span> <span class="math display">\[a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=\beta c(1+r)^{1-\gamma}\]</span> <span class="math display">\[x=a\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+a\]</span> <span class="math display">\[a_0=a=\dfrac{x}{\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+1}\]</span> Sustitimos <span class="math inline">\(a_0\)</span> <span class="math display">\[cx^{1-\gamma}=\dfrac{x^{1-\gamma}+\beta c(1+r)^{1-\gamma}x^{1-\gamma}\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} \right]^{1-\gamma}}{\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} +1\right]^{1-\gamma}}\]</span> <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c (1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> así, <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c=\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\left[1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}\right]\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\dfrac{1}{1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}}\]</span></p>
 </section>
-<section id="exercise-6" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">2.6</span> Exercise 6</h2>
-<p><em>Exercise 6</em> Let <span class="math inline">\(\{\xi_k\}\)</span> be a sequence of iid random variables such that <span class="math inline">\(E[\xi]=0\)</span> and <span class="math inline">\(E[\xi^2]=d\)</span>. Consider the dynamics <span class="math display">\[x_{k+1}=x_k+a_k+\xi_k,\hspace{0.5cm}k=0,1,2,...,\]</span> and the discounted cost <span class="math display">\[E\sum \beta^k(a_k^2+x_k^2).\]</span> i. Write down the associated Bellman equation.</p>
+<section id="exercise-6" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">3.6</span> Exercise 6</h2>
+<p><strong>Exercise 6</strong> Let <span class="math inline">\(\{\xi_k\}\)</span> be a sequence of iid random variables such that <span class="math inline">\(E[\xi]=0\)</span> and <span class="math inline">\(E[\xi^2]=d\)</span>. Consider the dynamics <span class="math display">\[x_{k+1}=x_k+a_k+\xi_k,\hspace{0.5cm}k=0,1,2,...,\]</span> and the discounted cost <span class="math display">\[E\sum \beta^k(a_k^2+x_k^2).\]</span> i. Write down the associated Bellman equation.</p>
 <ol start="2" type="i">
 <li><p>Conjecture that the solution to the Bellman equation takes the form <span class="math inline">\(v(x)=ax^2+b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constant.</p></li>
 <li><p>Determine the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p></li>
@@ -954,6 +974,11 @@ e.g.:
 <p><span class="math display">\[=\dfrac{x^2A\beta(1+A\beta)}{(1+A\beta)^2}+x^2+A\beta d+\beta B\]</span> <span class="math display">\[=x^2\left(1+\dfrac{A\beta}{1+A\beta}\right)+A\beta d+\beta B\]</span> Por lo que <span class="math display">\[A=1+\dfrac{A\beta}{1+A\beta},\hspace{0.5cm}B=\dfrac{A\beta d}{1-\beta}\]</span> De esta forma <span class="math display">\[A=\dfrac{1+2A\beta}{1+A\beta}\]</span> <span class="math display">\[A^2\beta+A(1-2\beta)-1=0\]</span> Obteniendo las soluciones <span class="math display">\[A=\dfrac{-1+2\beta\pm \sqrt{4\beta^2+1}}{2\beta}\]</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Sutton1998" class="csl-entry" role="listitem">
+Sutton, Richard S., and Andrew G. Barto. 2018. <em>Reinforcement Learning: An Introduction</em>. Second. The MIT Press. <a href="http://incompleteideas.net/book/the-book-2nd.html">http://incompleteideas.net/book/the-book-2nd.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1379,13 +1404,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
