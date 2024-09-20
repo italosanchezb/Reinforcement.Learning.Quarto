@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Tarea 1 – Reinforcement Learning Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea 2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Reinforcement Learning Quarto</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Tarea 2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1"><span class="header-section-number">2.1</span> Exercise 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">2.2</span> Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">2.3</span> Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4"><span class="header-section-number">2.4</span> Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5"><span class="header-section-number">2.5</span> Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6"><span class="header-section-number">2.6</span> Exercise 6</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="exercise-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">2.1</span> Exercise 1</h2>
+<p><em>Exercise 1</em> Read (Sec 1.1, pp 1-2 ) and answer the following. Explain why Reinforcement Learning differs for supervised and unsupervised learning.</p>
+<p>El aprendizaje reforzado se centra en aprender a qué hacer y cómo hacer situaciones que lleven a maximizar una recompensa, por otro lado el aprendizaje supervisado consiste en aprender de un conjuto de entrenamiento de ejemplos etiquetados dados por un supervisor externo con conocimientos. El objetivo de este aprendizaje es que el sistema extrapole o generalice sus respuestas para actuar correctamente en situaciones que no están presentes en el conjunto de entrenamiento.</p>
+</section>
+<section id="exercise-2" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">2.2</span> Exercise 2</h2>
+<p><em>Exercise 2</em> See the first Steve Bruton’s youtube video about <a href="https://www.youtube.com/watch?v=0MNVhXEX9to&amp;list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&amp;ab_channel=SteveBrunton">Reinforcement Learning</a>. Then accordingly to its presentation explain what is the meaning of the following expression: <span class="math display">\[V_{\pi}(s)=E\left(\sum_{t}\gamma^tr_t|s_0=s \right)\]</span></p>
+<p>La función mide de una forma que tan buenas son las acciones que se eligen, es decir la función de valor como la recompensa esperada habiendo elegido una política y un estado inicial.</p>
+</section>
+<section id="exercise-3" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">2.3</span> Exercise 3</h2>
+<p><em>Exercise 3</em> Form (see ) obtain a time line pear year from 1950 to 2012.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bibtex)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Activate the Core Packages</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="do">## Brings in a core of useful functions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)        <span class="do">## Tables</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Specific packages</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(milestones)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Initialize defaults</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Initialize defaults</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>column <span class="ot">&lt;-</span> <span class="fu">lolli_styles</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">col_names=</span><span class="cn">TRUE</span>, <span class="at">show_col_types=</span><span class="cn">FALSE</span>, <span class="at">file=</span><span class="st">'rl_time_line.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Sort the table by date</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(date)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Build a table</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(data) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#cols_hide(columns = event) |&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="fu">cell_text</span>(<span class="at">v_align =</span> <span class="st">"top"</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span> <span class="fu">cells_body</span>(<span class="at">columns =</span> date)) <span class="sc">|&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="st">"Source: Sutton and Barto (2018)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="ihkuzpixke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ihkuzpixke table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ihkuzpixke thead, #ihkuzpixke tbody, #ihkuzpixke tfoot, #ihkuzpixke tr, #ihkuzpixke td, #ihkuzpixke th {
+  border-style: none;
+}
+
+#ihkuzpixke p {
+  margin: 0;
+  padding: 0;
+}
+
+#ihkuzpixke .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ihkuzpixke .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ihkuzpixke .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ihkuzpixke .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ihkuzpixke .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ihkuzpixke .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ihkuzpixke .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ihkuzpixke .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ihkuzpixke .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ihkuzpixke .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ihkuzpixke .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ihkuzpixke .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ihkuzpixke .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ihkuzpixke .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ihkuzpixke .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ihkuzpixke .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ihkuzpixke .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ihkuzpixke .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ihkuzpixke .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ihkuzpixke .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ihkuzpixke .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ihkuzpixke .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ihkuzpixke .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ihkuzpixke .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ihkuzpixke .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ihkuzpixke .gt_left {
+  text-align: left;
+}
+
+#ihkuzpixke .gt_center {
+  text-align: center;
+}
+
+#ihkuzpixke .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ihkuzpixke .gt_font_normal {
+  font-weight: normal;
+}
+
+#ihkuzpixke .gt_font_bold {
+  font-weight: bold;
+}
+
+#ihkuzpixke .gt_font_italic {
+  font-style: italic;
+}
+
+#ihkuzpixke .gt_super {
+  font-size: 65%;
+}
+
+#ihkuzpixke .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ihkuzpixke .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ihkuzpixke .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ihkuzpixke .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ihkuzpixke .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ihkuzpixke .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ihkuzpixke .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ihkuzpixke .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ihkuzpixke div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">date</th>
+<th id="event" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">event</th>
+<th id="reference" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reference</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1911</td>
+<td class="gt_row gt_left" headers="event">Primer idea del "trial-and-error learning" (TaEL)</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1927</td>
+<td class="gt_row gt_left" headers="event">Aparece el termino "Reinforcement" en el contexto del aprendizaje animal</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1948</td>
+<td class="gt_row gt_left" headers="event">Turing describe un diseno para un sistema "pleasure-pain system"</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1954</td>
+<td class="gt_row gt_left" headers="event">Minsky Farley y Clark publican sus investigaciones sobre TaEL.</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1957</td>
+<td class="gt_row gt_left" headers="event">Aparece "Dynamic Programming" (DP)</td>
+<td class="gt_row gt_left" headers="reference">Bellman, R. E. (1957a). Dynamic Programming. Princeton University Press,Princeton.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1957</td>
+<td class="gt_row gt_left" headers="event">Introducen los Markov Decision Processes (MDP)</td>
+<td class="gt_row gt_left" headers="reference">Bellman, R. E. (1957b). A Markov decision process. Journal of Mathematical Mechanics, 6:679–684</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1959</td>
+<td class="gt_row gt_left" headers="event">Comienza a utilizarse el "optimal control" (OC)</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1959</td>
+<td class="gt_row gt_left" headers="event">Se desarrolla extensamente la DP</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
+<td class="gt_row gt_left" headers="event">Aparece el metodo de iteracion de politicas</td>
+<td class="gt_row gt_left" headers="reference">Howard, R. (1960). Dynamic Programming and Markov Processes. MIT Press, Cambridge, MA.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
+<td class="gt_row gt_left" headers="event">Se utilizan por primera vez en ingeniería"Reinforcement" y "Reinforcement Learning"</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1960</td>
+<td class="gt_row gt_left" headers="event">Se originan los "Learning Automata"</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1961</td>
+<td class="gt_row gt_left" headers="event">Se publica "Steps Toward Artificial Intelligence"</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1961</td>
+<td class="gt_row gt_left" headers="event">Se describe un sistema "TaEL" para el tic-tac-toe</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1963</td>
+<td class="gt_row gt_left" headers="event">Se desarrolla STeLLA</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1972</td>
+<td class="gt_row gt_left" headers="event">Trabajo de Klopf</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1973</td>
+<td class="gt_row gt_left" headers="event">Widrow, Gupta y Maitra modifican el LMS.</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1973</td>
+<td class="gt_row gt_left" headers="event">Teoría del aprendizaje de Bush y Mostelle</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1977</td>
+<td class="gt_row gt_left" headers="event">Werbos conecta el OC y PD</td>
+<td class="gt_row gt_left" headers="reference">Werbos, P. J. (1977). Advanced forecasting methods for global crisis warning and models of intelligence. General Systems Yearbook, 22:25–38.</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1978</td>
+<td class="gt_row gt_left" headers="event">Sutton desarrolla las ideas de Klopf</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1986</td>
+<td class="gt_row gt_left" headers="event">Introducen los clasificadores</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1989</td>
+<td class="gt_row gt_left" headers="event">Watkins integra los metodos de aprendizaje (MA)</td>
+<td class="gt_row gt_left" headers="reference">Watkins, C. J. C. H. (1989). Learning from Delayed Rewards. Ph.D. thesis, Cambridge University.</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">1996</td>
+<td class="gt_row gt_left" headers="event">Aparece el termino "Neurodynamic Programming"</td>
+<td class="gt_row gt_left" headers="reference">Bertsekas, D. P., Tsitsiklis, J. N. (1989). Parallel and Distributed Computation: Numerical Methods. Prentice-Hall, Englewood Cliffs, NJ</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">2003</td>
+<td class="gt_row gt_left" headers="event">"Reinforcement Learning" en economí</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">2012</td>
+<td class="gt_row gt_left" headers="event">Vision general del Reinforcement Learning y Juegos</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="date" style="vertical-align: top">NA</td>
+<td class="gt_row gt_left" headers="event">NA</td>
+<td class="gt_row gt_left" headers="reference">NA</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="even">
+<td colspan="3" class="gt_sourcenote">Source: Sutton and Barto (2018)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Adjust some defaults</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">"black"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>size  <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>background_color <span class="ot">&lt;-</span> <span class="st">"pink"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>column<span class="sc">$</span>source_info <span class="ot">&lt;-</span> <span class="st">"Source: Sutton and Barto (2018)"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Milestones timeline</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">milestones</span>(<span class="at">datatable =</span> data, <span class="at">styles =</span> column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_text()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_segment()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 25 rows containing missing values or values outside the scale range
+(`geom_segment()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Tarea-2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="exercise-4"><span class="header-section-number">2.4</span> Exercise 4</h2>
+<p><em>Exercise 4</em> Consider the following <em>consumption-saving</em> problem with dynamics <span class="math display">\[x_{k+1}=(1+r)(x_k-a_k),\hspace{0.5cm}k=0,1,...,N-1,\]</span> and utility function <span class="math display">\[\beta^N(x_N)^{1-\gamma}+\sum_{k=0}^{N-1}\beta^k(a_k)^{1-\gamma}\]</span>. Show that the value functions of the DP algorithm take the form <span class="math display">\[J_k(x)=A_k\beta^kx^{1-\gamma},\]</span> where <span class="math inline">\(A_N=1\)</span> and for <span class="math inline">\(k=N-1,...,0,\)</span> <span class="math display">\[A_k=\left[1+((1+r)\beta A_{k+1})^{\frac{1}{\gamma}} \right]^{\gamma}\]</span> Show also that the optimal policies are <span class="math inline">\(h_k(x)=A_k^{-1/\gamma} x,\)</span> for <span class="math inline">\(k=N-1,\ldots,0\)</span>.</p>
+<p><strong><em>Prueba</em></strong> Procedemos por inducción. Primero comprobamos que se cumple para <span class="math inline">\(n=N-1\)</span>, entonces como <span class="math inline">\(J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}\)</span>, tenemos que</p>
+<p><span class="math display">\[J_{N-1}=\min_{a\in A(x)}\{\beta^{N-1}(a)^{1-\gamma} + \beta^{N}(1+r)^{1-\gamma}(x-a)^{1-\gamma}\},\]</span> tomando la derivada con respecto a <span class="math inline">\(a\)</span> e igualando a cero. <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}- \beta^{N}(1+r)^{1-\gamma}(x-a)^{-\gamma}\]</span> <span class="math display">\[(1-\gamma)\beta^{N-1}a^{-\gamma}-\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> entonces <span class="math display">\[\left(\cfrac{x-a}{a}\right)^\gamma=\beta(1+r)^{1-\gamma}\implies \cfrac{x-a}{a}=[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\implies a=\dfrac{x}{[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}-\]</span> Sea <span class="math inline">\(a_0\)</span> es punto donde se alcanza el mínimo, por tanto <span class="math display">\[J_{N-1}(x)=\beta^{N-1}(a_0)^{1-\gamma}+\beta^N(1+r)^{1-\gamma}(x-a_0)^{1-\gamma}.\]</span> Desarrollando <span class="math display">\[J_{N-1}(x)=\dfrac{\beta^{N-1}x^{1-\gamma}}{([\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1)^{1-\gamma}}+\beta^N(1+r)^{1-\gamma}\left[\dfrac{x[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}}{\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1}\right]^{1-\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=\beta^{N-1}x^{1-\gamma}\left[[\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}+1\right]^{\gamma}\]</span> <span class="math display">\[J_{N-1}(x)=A_{N-1}\beta^{N-1}x^{1-\gamma}\]</span> con <span class="math display">\[A_{N-1}=\left(1+((1+r)^{1-\gamma}\beta)^{\frac{1}{\gamma}}\right)^{\gamma}\]</span> Ahora, supongamos que es válido para <span class="math inline">\(n=k+1\)</span>, 4 <span class="math display">\[J_{k+1}(x)=A_{k+1}\beta^{k+1}x^{1-\gamma}\]</span>. De aquí <span class="math display">\[J_k(x)=\min_{a\in (0,x)}\left\{\beta^ka^{1-\gamma}+A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Encontrando el punto mínimo <span class="math display">\[(1-\gamma)\beta^ka^{-\gamma}-A_{k+1}\beta^{k+1}(1+\gamma)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\beta^k\left[ a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}  \right]=0\]</span> <span class="math display">\[a^{-\gamma}-A_{k+1}\beta(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=A_{k+1}\beta(1+\gamma)^{1-\gamma}\]</span> <span class="math display">\[a=\dfrac{x}{\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1}\]</span> De igual forma sea el punto mínimo <span class="math inline">\(a_0\)</span>, se tiene <span class="math display">\[J_k(x)=\dfrac{\beta^kx^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}+\dfrac{A_{k+1}\beta^{k+1}(1+r)^{1-\gamma}\left(x[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right)^{1-\gamma}}{\left[\left[ A_{k+1}\beta(1+r)^{1-\gamma}  \right]^{\frac{1}{\gamma}}+1\right]^{1-\gamma}}\]</span> Simplificando se concluye que <span class="math display">\[\dfrac{\beta^kx^{1-\gamma}\left( 1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)}{\left(1+[A_{k+1}\beta(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}  \right)^{1-\gamma}}=\beta^kx^{1-\gamma}A_k\]</span></p>
+</section>
+<section id="exercise-5" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="exercise-5"><span class="header-section-number">2.5</span> Exercise 5</h2>
+<p><strong>Exercise 5</strong> Consider now the infinite–horizon version of the above consumption–saving problem.</p>
+<ol type="1">
+<li>Write down the associated Bellman equation.</li>
+<li>Argue why a solution to the Bellman equation should be of the form <span class="math display">\[v(x)=cx^{1-\gamma}\]</span>, where <span class="math inline">\(c\)</span> is constant. Find the constant and the stationary optimal policy.</li>
+</ol>
+<p><strong><em>Prueba</em></strong> Sea <span class="math display">\[cx^{1-\gamma}=\min\left\{ a^{1-\gamma}+\beta c(1+r)^{1-\gamma}(x-a)^{1-\gamma} \right\}\]</span> Calculando el mínimo <span class="math display">\[(1-\gamma)a^{-\gamma}-\beta c(1+r)^{1-\gamma}(1-\gamma)(x-a)^{-\gamma}=0\]</span> <span class="math display">\[(1-\gamma)\left[ a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}\right]=0\]</span> <span class="math display">\[a^{-\gamma}-\beta c(1+r)^{1-\gamma}(x-a)^{-\gamma}=0\]</span> <span class="math display">\[\left(\dfrac{x-a}{a}\right)^{\gamma}=\beta c(1+r)^{1-\gamma}\]</span> <span class="math display">\[x=a\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+a\]</span> <span class="math display">\[a_0=a=\dfrac{x}{\left[\beta c(1+r)^{1-\gamma} \right]^{\frac{1}{\gamma}}+1}\]</span> Sustitimos <span class="math inline">\(a_0\)</span> <span class="math display">\[cx^{1-\gamma}=\dfrac{x^{1-\gamma}+\beta c(1+r)^{1-\gamma}x^{1-\gamma}\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} \right]^{1-\gamma}}{\left[ (\beta c (1+r)^{1-\gamma})^{\frac{1}{\gamma}} +1\right]^{1-\gamma}}\]</span> <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c (1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> así, <span class="math display">\[cx^{1-\gamma}=x^{1-\gamma}\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c=\left[1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\right]^{\gamma}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=1+[\beta c(1+r)^{1-\gamma}]^{\frac{1}{\gamma}}\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\left[1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}\right]\]</span> <span class="math display">\[c^{\frac{1}{\gamma}}=\dfrac{1}{1-\beta^{\frac{1}{\gamma}}(1+r)^{\frac{1-\gamma}{\gamma}}}\]</span></p>
+</section>
+<section id="exercise-6" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="exercise-6"><span class="header-section-number">2.6</span> Exercise 6</h2>
+<p><em>Exercise 6</em> Let <span class="math inline">\(\{\xi_k\}\)</span> be a sequence of iid random variables such that <span class="math inline">\(E[\xi]=0\)</span> and <span class="math inline">\(E[\xi^2]=d\)</span>. Consider the dynamics <span class="math display">\[x_{k+1}=x_k+a_k+\xi_k,\hspace{0.5cm}k=0,1,2,...,\]</span> and the discounted cost <span class="math display">\[E\sum \beta^k(a_k^2+x_k^2).\]</span> i. Write down the associated Bellman equation.</p>
+<ol start="2" type="i">
+<li><p>Conjecture that the solution to the Bellman equation takes the form <span class="math inline">\(v(x)=ax^2+b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constant.</p></li>
+<li><p>Determine the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p></li>
+<li><p>Conjecture that the solution to the Bellman equation takes the form <span class="math inline">\(v(x)=ax^2+b\)</span>, where <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> are constant. Determine the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. <strong><em>Prueba</em></strong> Sea <span class="math inline">\(A=a\)</span> y <span class="math inline">\(B=b\)</span>, entonces <span class="math display">\[Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta E[A(x+a+\xi)^2+B]\}\]</span> <span class="math display">\[Ax^2+B=\min_{a\in A(x)}\{a^2+x^2+\beta AE[(x+a+\xi)^2]+\beta B\}\]</span> <span class="math display">\[=\min_{a\in A(x)}\{a^2+x^2+A\beta E[x^2+2ax+a^2+2(x+a)\xi+\xi^2]+\beta B\}\]</span> <span class="math display">\[=\min_{a\in A(x)}\{a^2+x^2+A\beta x^2+2axA\beta+A\beta a^2+A\beta d+\beta B\}\]</span> Encontrando el mínimo con la derivada <span class="math display">\[2a+2xA\beta+2A\beta a=0\]</span> entonces, <span class="math display">\[a=\dfrac{-xA\beta}{1+A\beta}\]</span> así <span class="math display">\[Ax^2+B=\dfrac{(xA\beta)^2}{(a+A\beta)^2}+x^2+\beta E\left[A\left(\dfrac{x}{1+A\beta}+\xi \right)^2 \right]+\beta B\]</span> <span class="math display">\[=\dfrac{x^2A^2\beta^2}{(1+A\beta)^2}+x^2+A\beta E\left[ \dfrac{x^2}{(1+A\beta)^2}+\dfrac{2x\xi}{1+A\beta}+\xi^2\right]+\beta B\]</span></p></li>
+</ol>
+<p><span class="math display">\[=\dfrac{x^2A\beta(1+A\beta)}{(1+A\beta)^2}+x^2+A\beta d+\beta B\]</span> <span class="math display">\[=x^2\left(1+\dfrac{A\beta}{1+A\beta}\right)+A\beta d+\beta B\]</span> Por lo que <span class="math display">\[A=1+\dfrac{A\beta}{1+A\beta},\hspace{0.5cm}B=\dfrac{A\beta d}{1-\beta}\]</span> De esta forma <span class="math display">\[A=\dfrac{1+2A\beta}{1+A\beta}\]</span> <span class="math display">\[A^2\beta+A(1-2\beta)-1=0\]</span> Obteniendo las soluciones <span class="math display">\[A=\dfrac{-1+2\beta\pm \sqrt{4\beta^2+1}}{2\beta}\]</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
