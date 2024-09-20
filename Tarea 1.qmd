@@ -63,7 +63,6 @@ encontrar  estructuras  ocultas  en  conjuntos  de  datos  no  etiquetados y Aun
 
 
 del algoritmo de la programación dinámica se sigue que para este caso particular
-_
 $J_{N}(x)=\beta^{N}(x_N)^{1-\gamma}$
 
 luego, para $k= N-1$
