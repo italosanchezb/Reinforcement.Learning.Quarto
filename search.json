@@ -22,31 +22,31 @@
   {
     "objectID": "Tarea 1.html",
     "href": "Tarea 1.html",
-    "title": "2  Activate the Core Packages",
+    "title": "2  Tarea 1",
     "section": "",
     "text": "2.1 EJERCICIO 1\nEn el aprendizaje reforzado un agente aprende a tomar decisiones (acciones) a través de la interacción con su entorno y recibiendo recompensas o castigos en función de las mismas, a diferencia del aprendizaje supervisado, ya que en este tipo de aprendizaje automático, un modelo se entrena utilizando un conjunto de datos que incluye tanto las entradas como las salidas correspondientes (etiquetas). es decir, consiste en aprender a partir\nde un conjunto de ejemplos ya etiquetados y proporcionados por un supervisor externo con conocimientos. Por lo que en este tipo de aprendizaje Cada ejemplo describe una situación especifica, y además existe una etiqueta que indica la acción adecuada que el sistema debe tomar en esa situación, El objetivo de este tipo de aprendizaje es que el\nsistema generalice sus respuestas para que actúe correctamente en situaciones que no están presentes en el conjunto de entrenamiento. Por otra parte El aprendizaje por refuerzo también es diferente de lo que los investigadores del aprendizaje automático llaman aprendizaje no supervisado, que generalmente consiste en\nencontrar estructuras ocultas en conjuntos de datos no etiquetados y Aunque en parte el aprendizaje por refuerzo es un tipo de aprendizaje no supervisado, en realidad este se centra mas que nada en maximizar una recompensa en lugar de buscar patrones ocultos en los datos.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activate the Core Packages</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tarea 1</span>"
     ]
   },
   {
     "objectID": "Tarea 1.html#ejercicio-2",
     "href": "Tarea 1.html#ejercicio-2",
-    "title": "2  Activate the Core Packages",
+    "title": "2  Tarea 1",
     "section": "2.2 EJERCICIO 2",
     "text": "2.2 EJERCICIO 2\nes posible pensar que dicha expresión es una función con la cual se mide el desempeño del sistema bajo diferentes políticas de control dado el estado inicial, es decir, nos ayuda a identificar que acciones fueron buenas y cuales fueron malas, además dicha expresión nos da el valor esperado de cuanta recompensa obtendremos en un futuro al elegir dicha politica dado un estado inicial. Por otra parte, el factor de descuento en la expresión, nos ayuda a comparar las recompensas futuras con las recompensas inmediatas, basicamente nos dice que tan a favor estamos de obtener una recompensa en el estado actual frente a un futuro lejano",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activate the Core Packages</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tarea 1</span>"
     ]
   },
   {
     "objectID": "Tarea 1.html#apd",
     "href": "Tarea 1.html#apd",
-    "title": "2  Activate the Core Packages",
+    "title": "2  Tarea 1",
     "section": "2.3 APD",
     "text": "2.3 APD\ndel algoritmo de la programación dinámica se sigue que para este caso particular \\(J_{N}(x)=\\beta^{N}(x_N)^{1-\\gamma}\\)\nluego, para \\(k= N-1\\) \\[J_{N-1}=\\min_{a\\in A(x)}\\{\\beta^{N-1}(a)^{1-\\gamma} + \\beta^{N}(1+r)^{1-\\gamma}(x-a)^{1-\\gamma}\\}\\] derivando con respecto a \\(a\\) obtenemos \\[(1-\\gamma)\\beta^{N-1}a^{-\\gamma}- \\beta^{N}(1+r)^{1-\\gamma}(x-a)^{-\\gamma}\\]} depués igualando a cero \\[(1-\\gamma)\\beta^{N-1}a^{-\\gamma}-\\beta(1+r)^{1-\\gamma}(x-a)^{-\\gamma}=0\\] entonces \\[(\\cfrac{x-a}{a})^\\gamma=\\beta(1+r)^{1-\\gamma}\\] \\[\\cfrac{x-a}{a}=[\\beta(1+r)^{1-\\gamma}]^{\\frac{1}{\\gamma}}\\]",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Activate the Core Packages</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tarea 1</span>"
     ]
   },
   {
